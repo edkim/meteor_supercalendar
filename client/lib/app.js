@@ -56,6 +56,7 @@ SuperCalendar = {
           center: 'title',
           right: 'month,agendaWeek,agendaDay'
         },
+        defaultView: 'agendaWeek',
         editable: false,
         events: entries,
         eventRender: function (event, element) {
