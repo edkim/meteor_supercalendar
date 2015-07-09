@@ -57,7 +57,8 @@ SuperCalendar = {
           right: 'month,agendaWeek,agendaDay'
         },
         defaultView: 'agendaWeek',
-        editable: false,
+        editable: true,
+        selectable: true,
         events: entries,
         eventRender: function (event, element) {
           $(element).attr('id', event._id);
