@@ -1,8 +1,8 @@
 Package.describe({
-  name: "gabrielhpugliese:supercalendar",
+  name: "edkim:supercalendar",
   summary: "Google Calendar-like as smart package",
   version: "0.7.1",
-  git: "https://github.com/gabrielhpugliese/meteor_supercalendar"
+  git: "https://github.com/edkim/meteor_supercalendar"
 });
 
 Package.onUse(function (api, where) {
