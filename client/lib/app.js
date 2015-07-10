@@ -17,7 +17,7 @@ SuperCalendar = {
       var hour = ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2);
       var timeData = {
         timeInputStyle: 'display: none;',
-        hasTimeChecked: false,
+        hasTimeChecked: false, //TODO: Get rid of this stupid option
         noTimeChecked: true
       };
 
@@ -37,6 +37,11 @@ SuperCalendar = {
           timeData: timeData
         }
       });
+    },
+    onSelect: function(data) {
+      var start = data.start;
+      var end = data.end;
+      console.log('start', start, "end", end);
     }
   },
   rendered: function () {
@@ -57,9 +62,15 @@ SuperCalendar = {
           right: 'month,agendaWeek,agendaDay'
         },
         defaultView: 'agendaWeek',
-        editable: true,
+        // editable: true,
         selectable: true,
         events: entries,
+        select: function(start, end) {
+          return SuperCalendar.events.onSelect.call(this, {
+            start: start,
+            end: end
+          });
+        },        
         eventRender: function (event, element) {
           $(element).attr('id', event._id);
         },
