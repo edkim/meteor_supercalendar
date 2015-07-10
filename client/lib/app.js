@@ -57,9 +57,9 @@ SuperCalendar = {
 
       $calendar.html('').fullCalendar({
         header: {
-          left: 'prev,next today',
+          left: '',
           center: 'title',
-          right: 'month,agendaWeek,agendaDay'
+          right: ''
         },
         defaultView: 'agendaWeek',
         // editable: true,
@@ -74,12 +74,12 @@ SuperCalendar = {
         eventRender: function (event, element) {
           $(element).attr('id', event._id);
         },
-        dayClick: function (date, flag, e, view) {
-          return SuperCalendar.events.onDayClick.call(this, e, self, {
-            date: date,
-            view: view
-          });
-        },
+        // dayClick: function (date, flag, e, view) {
+        //   return SuperCalendar.events.onDayClick.call(this, e, self, {
+        //     date: date,
+        //     view: view
+        //   });
+        // },
         eventClick: function (date, e, view) {
           return SuperCalendar.events.onEventClick.call(this, e, self, {
             date: date,

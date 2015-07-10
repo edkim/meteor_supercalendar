@@ -405,7 +405,8 @@ function Calendar(element, options, eventSources) {
 			
 			elementOuterWidth = element.outerWidth();
 			
-			header.updateTitle(currentView.title);
+			// header.updateTitle(currentView.title);
+			header.updateTitle("Set Availability");
 			var today = new Date();
 			if (today >= currentView.start && today < currentView.end) {
 				header.disableButton('today');
@@ -3059,11 +3060,14 @@ function AgendaView(element, calendar, viewName) {
 			html += "<th class='fc-agenda-axis " + headerClass + "'>&nbsp;</th>";
 		}
 
+		//hack for showing only days of the week
+		var dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thurs', 'Fri', 'Sat'];
+
 		for (col=0; col<colCnt; col++) {
 			date = cellToDate(0, col);
 			html +=
 				"<th class='fc-" + dayIDs[date.getDay()] + " fc-col" + col + ' ' + headerClass + "'>" +
-				htmlEscape(formatDate(date, colFormat)) +
+				dayNames[col] +
 				"</th>";
 		}
 
