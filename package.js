@@ -1,7 +1,7 @@
 Package.describe({
   name: "edkim:supercalendar",
   summary: "Google Calendar-like as smart package",
-  version: "0.7.5",
+  version: "0.7.6",
   git: "https://github.com/edkim/meteor_supercalendar"
 });
 
