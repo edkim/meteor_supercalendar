@@ -20,6 +20,7 @@ var defaults = {
 	// display
 	defaultView: 'month',
 	aspectRatio: 1.35,
+	height: 1650,
 	header: {
 		left: 'title',
 		center: '',
@@ -37,7 +38,8 @@ var defaults = {
 	
 	allDayDefault: true,
 	ignoreTimezone: true,
-	
+	eventColor: '#d43f3a',
+
 	// event ajax
 	lazyFetching: true,
 	startParam: 'start',
@@ -405,8 +407,7 @@ function Calendar(element, options, eventSources) {
 			
 			elementOuterWidth = element.outerWidth();
 			
-			// header.updateTitle(currentView.title);
-			header.updateTitle("Set Availability");
+			header.updateTitle("");
 			var today = new Date();
 			if (today >= currentView.start && today < currentView.end) {
 				header.disableButton('today');

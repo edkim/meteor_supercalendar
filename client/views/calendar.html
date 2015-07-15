@@ -72,42 +72,7 @@
     <div class="anti-modal-closer">&times;</div>
   </div>
   <div class="anti-modal-body">
-    <ul>
-      <li>
-      When: {{start}}
-      </li>
-      <li>Description: {{description}}</li>
-    </ul>
     <button type="button" class="btn btn-danger delete-event-btn">Delete</button>
   </div>
 </div>
-</template>
-
-<template name="availability_modal">
-  <div class="anti-modal-box" id="event-details-modal">
-    <div class="anti-modal-header">
-      <div class="anti-modal-title">Mark time as</div>
-      <div class="anti-modal-closer">&times;</div>
-    </div>
-    <div class="anti-modal-body">
-    {{> instructors_dropdown}}
-    <button type="button" class="btn btn-success set-avail-btn">Available</button>
-    <button type="button" class="btn btn-danger set-unavail-btn">Unavailable</button>
-    </div>
-  </div>
-</template>
-
-<template name="instructors_dropdown">
-  <select autocomplete="off" name="instructor" class="form-control instructor-select">
-  <!-- only superAdmin should see these choices. Otherwise, it's assumed it's for the instructor who is logged in -->
-<!--     {{# each instructors}}
-      <option>{{name}}</option>
-    {{/each}} -->
-    <option>Lauren</option>
-    <option>Jessica</option>
-    <option>Carrie</option>
-    <option>Jami</option>
-    <option>Natalie</option>
-    <option>Cleo</option>
-  </select>
 </template>

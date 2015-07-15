@@ -39,15 +39,9 @@ SuperCalendar = {
       });
     },
     onSelect: function(data) {
-      var start = data.start;
-      var end = data.end;
-      console.log('start', start, "end", end);
-      AntiModals.overlay('availability_modal', {
-        data: {
-          start: start,
-          end: end
-        }
-      });
+      data.instructor_id = Meteor.user()._id;
+
+      Meteor.call("setBusy", data);
     }
   },
   rendered: function () {
